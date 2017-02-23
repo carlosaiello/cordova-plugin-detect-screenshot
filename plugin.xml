@@ -10,7 +10,7 @@
         <param name="onload" value="true" />
       </feature>
     </config-file>
-    <source-file src="src/android/Screenshot.java" target-dir="src/org/android/screenshot" />
+    <source-file src="src/android/ScreenshotPlugin.java" target-dir="src/org/android/screenshot" />
     
   </platform>
 
