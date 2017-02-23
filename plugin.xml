@@ -5,12 +5,12 @@
   <platform name="android">
     <framework src="src/android/plugin.gradle" custom="true" type="gradleReference"/>
     <config-file target="res/xml/config.xml" parent="/*">
-      <feature name="screenshot">
+      <feature name="ScreenshotPlugin">
         <param name="android-package" value="org.android.screenshot.ScreenshotPlugin"/>
         <param name="onload" value="true" />
       </feature>
     </config-file>
-    <source-file src="src/android/screenshot.java" target-dir="src/org/android/screenshot" />
+    <source-file src="src/android/Screenshot.java" target-dir="src/org/android/screenshot" />
     
   </platform>
 

@@ -32,7 +32,7 @@ package org.android.screenshot;
 
         import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
-        public class PrivacyScreenPlugin extends CordovaPlugin implements LifecycleProvider<ActivityEvent>  {
+        public class Screenshot extends CordovaPlugin implements LifecycleProvider<ActivityEvent>  {
 
             private final BehaviorSubject<ActivityEvent> lifecycleSubject = BehaviorSubject.create();
 
