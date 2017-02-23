@@ -5,16 +5,18 @@
   "cordova": {
     "id": "com.lukemiles.screenshot",
     "platforms": [
+      "android",
       "ios"
     ]
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/restocks/cordova-plugin-detect-screenshot"
+    "url": "https://github.com/AlejandroOrozco/cordova-plugin-detect-screenshot"
   },
   "keywords": [
     "cordova",
     "ecosystem:cordova",
+    "cordova-android",
     "cordova-ios"
   ],
   "author": "Restocks",

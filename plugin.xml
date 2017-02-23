@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin id="com.lukemiles.screenshot" version="1.0.6" xmlns="http://apache.org/cordova/ns/plugins/1.0">
-  <name>cordova-plugin-screenshot</name>    <!-- ios -->
-    <platform name="ios">
+  <name>cordova-plugin-screenshot</name>
 
-        <config-file target="config.xml" parent="/*">
-            <feature name="screenshot">
-                <param name="ios-package" value="screenshot" />
-                <param name="onload" value="true" />
-            </feature>
-        </config-file>
+  <platform name="android">
+    <framework src="src/android/plugin.gradle" custom="true" type="gradleReference"/>
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="screenshot">
+        <param name="android-package" value="org.android.screenshot.ScreenshotPlugin"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+    <source-file src="src/android/screenshot.java"/>
+    
+  </platform>
 
-        <header-file src="src/ios/screenshot.h" />
-        <source-file src="src/ios/screenshot.m" />
 
-    </platform>
+  <platform name="ios">
+
+    <config-file target="config.xml" parent="/*">
+        <feature name="screenshot">
+            <param name="ios-package" value="screenshot" />
+            <param name="onload" value="true" />
+        </feature>
+    </config-file>
+
+    <header-file src="src/ios/screenshot.h" />
+    <source-file src="src/ios/screenshot.m" />
+
+  </platform>
 </plugin>

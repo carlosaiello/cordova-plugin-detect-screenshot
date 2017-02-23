@@ -1,0 +1,10 @@
+repositories {
+    maven {
+        url  "http://dl.bintray.com/piasy/maven"
+    }
+}
+
+dependencies {
+    compile 'com.github.piasy:rxscreenshotdetector:1.2.0'
+    compile 'com.trello.rxlifecycle2:rxlifecycle-components:2.0.1'
+}
