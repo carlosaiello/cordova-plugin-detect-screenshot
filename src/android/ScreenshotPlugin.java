@@ -30,7 +30,8 @@ package org.android.screenshot;
                 RxScreenshotDetector.start(activity).compose(this.<String>bindToLifecycle()).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<String>() {
                     @Override
                     public void accept(String s) throws Exception {
-                        webView1.loadUrl("javascript: alert('Screenshot');");
+                        webView1.loadUrl("javascript: cordova.fireWindowEvent('screenshot');");
+                        webView1.loadUrl("javascript: cordova.fireDocumentEvent('screenshot');");
                     }
                 });
             }          
