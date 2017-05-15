@@ -14,13 +14,13 @@
                       usingBlock:^(NSNotification *note) {
                         if ([self.webView respondsToSelector:@selector(stringByEvaluatingJavaScriptFromString:)]) {
                             // UIWebView
-                            [self.webView performSelectorOnMainThread:@selector(stringByEvaluatingJavaScriptFromString:) withObject:@"cordova.fireWindowEvent('screenshot');" waitUntilDone:NO];
+                            [self.webView performSelectorOnMainThread:@selector(stringByEvaluatingJavaScriptFromString:) withObject:@"cordova.fireDocumentEvent('screenshot');cordova.fireWindowEvent('screenshot');" waitUntilDone:NO];
                         } else if ([self.webView respondsToSelector:@selector(evaluateJavaScript:completionHandler:)]) {
                             // WKWebView
-                            [self.webView performSelector:@selector(evaluateJavaScript:completionHandler:) withObject:@"cordova.fireWindowEvent('screenshot');" withObject:nil];
+                            [self.webView performSelector:@selector(evaluateJavaScript:completionHandler:) withObject:@"cordova.fireDocumentEvent('screenshot');cordova.fireWindowEvent('screenshot');" withObject:nil];
                         } else {
                             // cordova lib version is > 4
-                            [self.commandDelegate evalJs:@"cordova.fireWindowEvent('screenshot');" ];
+                            [self.commandDelegate evalJs:@"cordova.fireDocumentEvent('screenshot');cordova.fireWindowEvent('screenshot');" ];
                         }
                       }];
         }
